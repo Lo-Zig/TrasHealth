@@ -1,0 +1,87 @@
+* {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    color: #000000;
+}
+
+.logo {
+    width: 50px;
+}
+
+.header1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #323272;
+    font-size: max(10px, 1vw)
+}
+
+.infos {
+    text-decoration: none;
+    color: white;
+    transition: 200ms;
+}
+
+.infos:hover {
+    color: #f7a074;
+    transform: scale(1.1);
+    transition: 200ms;
+}
+
+.botao {
+    text-decoration: none;
+    color: white;
+    border: solid 5px #f7a074;
+    border-radius: 20px;
+    padding: 3px 20px;
+    background-color: #f7a074;
+    transition: 200ms;
+}
+
+.botao:hover {
+    color: #323272;
+    transform: scale(1.1);
+    transition: 200ms;
+
+}
+
+body {
+    background-image: url(../img/wllpaperperf.jpg);
+}
+.form{
+    display: flex;
+    width: 100vw;
+    height: 44vw;
+    align-items: center;
+    text-align: start;
+    justify-content: center;
+    
+}
+.form-control{
+    width: 315px;
+}
+.btn{
+    color: white;
+    background-color: #2ca444;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.label-btn{
+    text-decoration: none;
+    color: #323272;
+}
+.alert.alert-error{
+    color: red;
+}

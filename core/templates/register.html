@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de usuário</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/logar.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@1,900&display=swap");
+    </style>
+    <link rel="icon" href="../static/img/logo.png" type="image/x-icon" />
+</head>
+<body>
+    <header class="header1">
+        <a href="index" class="infos">
+          <img src="../static/img/logo3.png" alt="" class="logo" />
+        </a>
+        <a href="{% url 'nos' %}" class="infos">QUEM SOMOS NOS?</a>
+        <a href="{% url 'mapa' %}" class="infos">MAPA</a>
+        <a href="{% url 'vitrine' %}" class="infos">VITRINE</a>
+        <a href="{% url 'sac' %}" class="infos">SAC</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'perfil' %}" class="botao">PERFIL</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="botao">LOGAR</a>
+        {% endif %}
+    </header>
+    <div class="form">
+        <form class="formm" method="POST" action="{% url 'register' %}">
+            <h1>Cadastro de usuário</h1><br>
+            {% csrf_token %}
+            <div class="label">
+                <label>CNPJ da empresa:</label>
+                
+            </div>
+            <input name="username" class="form-control" type="text" placeholder="CNPJ...">
+            <br>
+            <br>
+            <div class="label"><label>Email:</label></div>
+            <input name="email" class="form-control" type="email" placeholder="Email...">
+            <br>
+            <br>
+            <div class="label"><label>Nome da empresa:</label></div>
+            <input name="first_name" class="form-control" type="text" placeholder="Nome da Empresa.">
+            <br>
+            <br>
+            <div class="senha"><label>Senha:</label></div>
+            <input name="password" class="form-control" type="password" placeholder="Senha...">
+            <br>
+            <br>
+            <input class="btn btn-success btn-lg" type="submit" value="Enviar">
+            {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        </form>
+    </div>
+</body>
+</html>
